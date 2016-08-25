@@ -59,12 +59,16 @@ class Company:
             high+=float(h["High"])
             counter+=1
             
-        self.closeAvg = float(int(1000*close/counter)/1000)
+        self.close_avg = float(int(1000*close/counter)/1000)
         
-        self.lowAvg = float(int(1000*low/counter)/1000)
+        self.low_avg = float(int(1000*low/counter)/1000)
         self.lower = lower
-        self.lowerDate = lower_date
+        self.lower_date = lower_date
         
         self.high_avg = float(int(1000*high/counter)/1000)
         self.higher = higher
         self.higher_date = higher_date
+        self.general_info = {"Close Avg":self.close_avg, "Low Avg":self.low_avg, "Lower":self.lower, "Lower Date":self.lower_date,
+                             "High Avg":self.high_avg, "Higher":self.higher, "Higher Date":self.higher_date}
+
+        return self.general_info
